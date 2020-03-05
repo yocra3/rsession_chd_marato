@@ -9,7 +9,9 @@ FROM bioconductor/bioconductor_docker:RELEASE_3_10
 ## fgsea: GSEA analysis
 ## reactome.db: pathways to test
 ## IlluminaHumanMethylationEPICanno.ilm10b4.hg19: Annotatcion for EPIC array
-RUN R -e 'BiocManager::install(c("limma", "OUTRIDER", "mCSEA", "minfi", "bumphunter", "reactome.db", "fgsea", "IlluminaHumanMethylationEPICanno.ilm10b4.hg19"))'
+## edgeR: process RNAseq data
+RUN R -e 'BiocManager::install(c("limma", "OUTRIDER", "mCSEA", "minfi", "bumphunter", "reactome.db", \
+"fgsea", "IlluminaHumanMethylationEPICanno.ilm10b4.hg19", "edgeR"))'
 
 # Install tidyverse (latest versions available when creating the file)
 ## cowplot: make panel plots
